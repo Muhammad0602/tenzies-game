@@ -50,7 +50,7 @@ Tenzies is an engaging dice game crafted with React, offering players an enjoyab
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-<a href="">Live</a>
+<a href="https://tenzies-game-3oaa.onrender.com">Live</a>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
