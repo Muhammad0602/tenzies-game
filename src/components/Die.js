@@ -1,16 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Die(props) {
+export default function Die({ value, isHeld, holdDice }) {
   const styles = {
-    backgroundColor: props.isHeld ? '#59E391' : 'white',
+    backgroundColor: isHeld ? '#59E391' : 'white',
   };
   return (
     <div
       className="die-face"
       style={styles}
-      onClick={props.holdDice}
+      role="button"
+      tabIndex={0}
+      onClick={holdDice}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          holdDice();
+        }
+      }}
     >
-      <h2 className="die-num">{props.value}</h2>
+      <h2 className="die-num">{value}</h2>
     </div>
   );
 }
+
+Die.propTypes = {
+  value: PropTypes.number.isRequired,
+  isHeld: PropTypes.bool.isRequired,
+  holdDice: PropTypes.func.isRequired,
+};
